@@ -90,6 +90,7 @@ const App = () => {
       : ["slide-down", "slide-up"];
     container.classList.remove(keys[0]);
     container.classList.add(keys[1]);
+    if (chatOpen) handleRefresh();
     setChatOpen(!chatOpen);
   };
 
