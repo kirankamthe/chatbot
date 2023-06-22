@@ -1,8 +1,10 @@
 .chatbot-header {
-  padding: 24px 28px 0px;
+  padding: 10px 14px 6px;
   position: relative;
   z-index: 4;
   flex: 0 0 auto;
+  display: flex;
+  align-items: center;
   color: rgb(255, 255, 255);
   background: linear-gradient(
     135deg,
@@ -29,62 +31,23 @@
   float: left;
 }
 
-h2.oneline {
+.chat-bot-close {
+  background: #ffffff;
   display: flex;
   align-items: center;
-  margin: 15px;
+  justify-content: center;
+  border-radius: 60px;
+  padding: 4px;
+  border: 0px;
+  cursor: pointer;
+  margin-left: auto;
 }
 
-h2 span {
-  margin-right: 10px;
+.chat-bot-close:hover {
+  opacity: 0.5;
 }
 
-h2 .emoji {
-  width: 24px;
-  height: 24px;
-}
-
-.offline-message {
-  margin: 18px -28px 0px;
-  color: currentcolor;
-  width: calc(100% + 56px);
-  padding: 14px 28px 20px;
-  position: relative;
-  background-size: 100% calc(100% + 12px);
-  z-index: 1;
-  background-image: linear-gradient(
-    135deg,
-    rgba(42, 39, 218, 0.72) 0%,
-    rgba(0, 204, 255, 0.72) 100%
-  );
-}
-
-.offline-message span.online::before {
-  content: "";
-  display: block;
-  width: 8px;
-  height: 8px;
-  position: absolute;
-  top: 18px;
-  background: rgb(88, 183, 67);
-  border-radius: 50%;
-  left: 12px;
-}
-
-.offline-message::after {
-  content: "";
-  position: absolute;
-  width: calc(100% + 10px);
-  bottom: -8px;
-  left: -5px;
-  border-image-source: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzNzIgMTUiPgogIDxwYXRoIGQ9Ik0zNDkuOCAxLjRDMzM0LjUuNCAzMTguNSAwIDMwMiAwaC0yLjVjLTkuMSAwLTE4LjQuMS0yNy44LjQtMzQuNSAxLTY4LjMgMy0xMDIuMyA0LjctMTQgLjUtMjggMS4yLTQxLjUgMS42Qzg0IDcuNyA0MS42IDUuMyAwIDIuMnY4LjRjNDEuNiAzIDg0IDUuMyAxMjguMiA0LjEgMTMuNS0uNCAyNy41LTEuMSA0MS41LTEuNiAzMy45LTEuNyA2Ny44LTMuNiAxMDIuMy00LjcgOS40LS4zIDE4LjctLjQgMjcuOC0uNGgyLjVjMTYuNSAwIDMyLjQuNCA0Ny44IDEuNCA4LjQuMyAxNS42LjcgMjIgMS4yVjIuMmMtNi41LS41LTEzLjgtLjUtMjIuMy0uOHoiIGZpbGw9IiNmZmYiLz4KPC9zdmc+Cg==");
-  border-image-slice: 0 0 100%;
-  border-image-width: 0 0 15px;
-  border-image-repeat: stretch;
-  border-width: 0px 0px 15px;
-  border-bottom-style: solid;
-  border-color: initial;
-  border-top-style: initial;
-  border-left-style: initial;
-  border-right-style: initial;
+.chat-bot-close img {
+  height: 18px;
+  width: 18px;
 }

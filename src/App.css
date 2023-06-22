@@ -5,7 +5,9 @@
   justify-content: center;
   min-height: 100vh;
   font-family: Arial, sans-serif;
-  background-color: #fff;
+  background-image: url("../src/assets/background.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .chat-bot {
@@ -16,7 +18,7 @@
   height: 48px;
   width: 48px;
   border-radius: 60px;
-  padding: 40px;
+  padding: 34px;
   position: fixed;
   bottom: 20px;
   right: 20px;
@@ -35,15 +37,10 @@
 }
 
 .chat-bot .opened {
-  height: 54px;
-  width: 54px;
+  height: 40px;
+  width: 40px;
   transform: scaleX(-1);
   rotate: -10deg;
-}
-
-.chat-bot .closed {
-  height: 54px;
-  width: 54px;
 }
 
 .chat-bot:hover {

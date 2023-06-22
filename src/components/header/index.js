@@ -1,25 +1,17 @@
 import "./styles.css";
 import Avtar from "./../../assets/avtar.svg";
+import CloseIcon from "./../../assets/close.svg";
 
-const BotHeader = () => {
+const BotHeader = ({ handleBotClick }) => {
   return (
     <div className="chatbot-header">
       <div className="avatars-wrapper">
         <img alt="avtar" className="header-ava" src={Avtar} />
       </div>
-      <h2 className="oneline">
-        <span>Hi there!</span>
-        <img
-          src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/12.1.1/72x72/1f44b.png"
-          alt="👋"
-          className="emoji"
-        />
-      </h2>
-      <div className="offline-message">
-        <span className="online">
-          <span>We are online</span>
-        </span>
-      </div>
+      <h2>CBSI Chat</h2>
+      <button className="chat-bot-close" onClick={handleBotClick}>
+        <img alt="chat-bot" src={CloseIcon} />
+      </button>
     </div>
   );
 };

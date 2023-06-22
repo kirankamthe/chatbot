@@ -1,7 +1,6 @@
 import "./App.css";
 import React, { useState } from "react";
-import ChatBot from "./components/ChatBot";
-import CloseIcon from "./assets/close.svg";
+import ChatBot from "./components/chatBot/index";
 import OpenIcon from "./assets/chat-bot.svg";
 
 const App = () => {
@@ -19,14 +18,12 @@ const App = () => {
 
   return (
     <div className="app-container">
-      <button className="chat-bot" onClick={handleBotClick}>
-        <img
-          alt="chat-bot"
-          src={chatOpen ? CloseIcon : OpenIcon}
-          className={chatOpen ? "closed" : "opened"}
-        />
-      </button>
-      <ChatBot chatOpen={chatOpen} />
+      {!chatOpen && (
+        <button className="chat-bot" onClick={handleBotClick}>
+          <img alt="chat-bot" src={OpenIcon} className="opened" />
+        </button>
+      )}
+      <ChatBot chatOpen={chatOpen} handleBotClick={handleBotClick} />
     </div>
   );
 };
