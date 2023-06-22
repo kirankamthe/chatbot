@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="1280.000000pt" height="640.000000pt" viewBox="0 0 1280.000000 640.000000" preserveAspectRatio="xMidYMid meet">
 	<defs>
 		<linearGradient id="gradient" gradientTransform="rotate(110)">
-			<stop offset="0%" stop-color="rgb(0, 204, 255)" />
-			<stop offset="100%" stop-color="rgb(42, 39, 218)" />
+			<stop offset="0%" stop-color="rgb(100, 30, 140)" />
+			<stop offset="100%" stop-color="rgb(138, 0, 229)" />
 		</linearGradient>
 	</defs>
 	<g fill="url(#gradient)" transform="translate(0.000000,640.000000) scale(0.100000,-0.100000)" stroke="none">
