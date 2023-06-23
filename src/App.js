@@ -14,6 +14,7 @@ const App = () => {
   const [messages, setMessages] = useState([
     { sender: "bot", text: "Hello! How can I assist you today?" },
   ]);
+  const [showSelection, setShowSelectoion] = useState(false);
   const [userId, setUserId] = useState("");
   const [inputText, setInputText] = useState("");
   const [typing, setTyping] = useState(false);
@@ -49,23 +50,37 @@ const App = () => {
     ]);
   };
 
-  const handleUserInput = async () => {
-    if (inputText.trim() === "") return;
+  const handleUserInput = async (text) => {
+    setShowSelectoion(false);
+    if (inputText.trim() === "" && text === "") return;
     const params = {
-      inputText,
-      userId: userId,
+      text: inputText ? inputText : text,
+      sessionId: userId,
     };
     setInputText("");
-    addUserMessage(inputText);
+    addUserMessage(inputText ? inputText : text);
     setTyping(true);
     try {
-      const response = await axios.post("https://api.example.com/data", params);
-      const message = response?.mesages?.[0]?.contentText ?? "Try again";
-      addBotMessage(message);
-      setTyping(false);
+      const response = await axios.post("http://127.0.0.1:5000/chat", params);
+      waitForResposne(response);
     } catch (e) {
       addBotMessage(`Something went wrong, please try after some time.`);
       setTyping(false);
+    }
+  };
+
+  const waitForResposne = (response) => {
+    if (response?.length) {
+      response.map((msg) => {
+        setTimeout(() => {
+          if (msg?.includes("?")) {
+            setShowSelectoion(true);
+          }
+          addBotMessage(msg);
+          setTyping(false);
+        }, 1000);
+        return msg;
+      });
     }
   };
 
@@ -92,6 +107,19 @@ const App = () => {
     container.classList.add(keys[1]);
     if (chatOpen) handleRefresh();
     setChatOpen(!chatOpen);
+  };
+
+  const ConfirmationComponent = () => {
+    return (
+      <div className="confirm">
+        <button className="confirm-btn" onClick={() => handleUserInput("Yes")}>
+          Yes
+        </button>
+        <button className="confirm-btn" onClick={() => handleUserInput("No")}>
+          No
+        </button>
+      </div>
+    );
   };
 
   return (
@@ -135,6 +163,7 @@ const App = () => {
               <span></span>
             </div>
           )}
+          {showSelection && ConfirmationComponent()}
           <div ref={messagesEndRef} />
         </div>
         <div className="chatbot-input-container">

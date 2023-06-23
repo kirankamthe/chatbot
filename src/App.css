@@ -100,7 +100,7 @@
 
 .chatbot-message.user {
   background: #fff;
-  color: #616161;
+  color: #8a00e5;
   align-self: flex-end;
   width: 70%;
   border-bottom-right-radius: 0px;
@@ -312,4 +312,24 @@ input[type="text"]:focus {
 .chat-bot-btn img {
   height: 18px;
   width: 18px;
+}
+
+.confirm-btn {
+  border-color: #8a00e5;
+  background: #fff;
+  padding: 10px 20px;
+  border-radius: 34px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-right: 6px;
+}
+
+.confirm-btn:hover {
+  opacity: 0.5;
+}
+
+.confirm {
+  display: flex;
+  align-items: center;
+  margin-bottom: 14px;
 }
